@@ -41,6 +41,34 @@ const config = {
                     cacheDirectory: true,
                     plugins: ['react-hot-loader/babel', '@babel/plugin-proposal-function-bind', '@babel/plugin-proposal-class-properties'],
                 },
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    "style-loader", // creates style nodes from JS strings
+                    "css-loader", // translates CSS into CommonJS
+                    "sass-loader" // compiles Sass to CSS, using Node Sass by default
+                ]
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    "style-loader", // creates style nodes from JS strings
+                    "css-loader", // translates CSS into CommonJS
+                ]
+            },
+            {
+                test: /\.(gif|png|jpe?g|svg)$/i,
+                use: [
+                    'file-loader',
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            bypassOnDebug: true, // webpack@1.x
+                            disable: true, // webpack@2.x and newer
+                        },
+                    },
+                ],
             }
         ]
     },

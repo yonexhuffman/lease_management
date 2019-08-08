@@ -9,6 +9,10 @@ import store, {history} from './store/configureStore';
 import {verifyToken} from './services/tokenService';
 import App from './containers/app/AppContainer';
 
+import './assets/css/vendor/bootstrap.min.css';
+import './assets/css/vendor/bootstrap.rtl.only.min.css';
+
+
 const mountNode = document.getElementById('root');
 const theme = createMuiTheme({
     typography: {
@@ -21,14 +25,23 @@ const theme = createMuiTheme({
 
 // Used to log in if token is valid
 store.dispatch(verifyToken());
+/*
+*/
+const color = 'light.red';
 
-ReactDOM.render(
-    <MuiThemeProvider theme={theme}>
-        <Provider store={store}>
-            <ConnectedRouter history={history}>
-                <App/>
-            </ConnectedRouter>
-        </Provider>
-    </MuiThemeProvider>,
-    mountNode
-);
+let render = () => {
+    import('./assets/css/sass/themes/gogo.' + color + '.scss').then(x => {
+       // require('./AppRenderer');
+        ReactDOM.render(
+            <MuiThemeProvider theme={theme}>
+                <Provider store={store}>
+                    <ConnectedRouter history={history}>
+                        <App/>
+                    </ConnectedRouter>
+                </Provider>
+            </MuiThemeProvider>,
+            mountNode
+        );    
+    });
+  };
+  render();
