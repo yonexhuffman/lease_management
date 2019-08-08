@@ -16,11 +16,11 @@ class LoginContainer extends Component {
     }
 
     componentDidMount() {
-        document.body.classList.add("background");
-      }
-      componentWillUnmount() {
-        document.body.classList.remove("background");
-      }
+        document.body.classList.add('background');
+    }
+    componentWillUnmount() {
+        document.body.classList.remove('background');
+    }
 
     /**
      * Submit the form.
@@ -28,7 +28,6 @@ class LoginContainer extends Component {
      * @param {object} formProps
      */
     submitForm(formProps) {
-
         this.props.actions.login(formProps);
     }
 
