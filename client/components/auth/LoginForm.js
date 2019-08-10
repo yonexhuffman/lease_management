@@ -40,7 +40,7 @@ class LoginForm extends Component {
                         Please use your credentials to login.
                         <br />
                         If you are not a member, please{' '}
-                        <NavLink to={`/register`} className="white">
+                        <NavLink to={`/user/signup`} className="white">
                             register
                         </NavLink>
                         .

@@ -14,14 +14,6 @@ class LoginContainer extends Component {
 
         this.submitForm = this.submitForm.bind(this);
     }
-
-    componentDidMount() {
-        document.body.classList.add('background');
-    }
-    componentWillUnmount() {
-        document.body.classList.remove('background');
-    }
-
     /**
      * Submit the form.
      *
@@ -33,18 +25,10 @@ class LoginContainer extends Component {
 
     render() {
         return (
-            <Fragment>
-                <div className="fixed-background" />
-                <main>
-                <div className="container">
-                    <LoginForm
-                            onSubmit={this.submitForm}
-                            errorMessage={this.props.errorMessage}
-                        />
-                </div>
-                </main>
-            </Fragment>
-                    
+            <LoginForm
+                onSubmit={this.submitForm}
+                errorMessage={this.props.errorMessage}
+            />    
         )
     }
 
