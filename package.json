@@ -28,7 +28,7 @@
     "webpack",
     "boilerplate"
   ],
-  "author": "Krishna Timilsina <bikranshu.t@gmail.com>",
+  "author": "Krishna Timilsina <bikranshu.t@gmail.com>, Daniel <danil-chernokalov88@outlook.com>",
   "license": "MIT",
   "dependencies": {
     "@material-ui/core": "^3.9.3",

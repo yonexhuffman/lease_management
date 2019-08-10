@@ -31,6 +31,7 @@ class SignUpContainer extends Component {
         return (
             <SignUpForm
                 onSubmit={this.submitForm}
+                errorMessage={this.props.errorMessage}
             />
         );
     }
