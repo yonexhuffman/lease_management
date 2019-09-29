@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import {bindActionCreators} from 'redux';
-import {connect} from 'react-redux';
+import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-import {USERS} from '../../constants/entity'
+import { USERS } from '../../constants/entity'
 import * as crudAction from '../../actions/crudAction'
 
 // Import custom components

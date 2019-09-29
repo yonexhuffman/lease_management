@@ -11,17 +11,23 @@ import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import webpackConfig from '../webpack/webpack.config.dev';
 
-if (process.env.NODE_ENV === 'development') {
+import { uploadnewproposal, uploadeditproposal, uploadnewleaseattatchfile, uploadleaseattatchfile } from './controllers/upload';
 
-    const compiler = webpack(webpackConfig);
-    app.use(webpackDevMiddleware(compiler, {noInfo: true, publicPath: webpackConfig.output.publicPath}));
-    app.use(webpackHotMiddleware(compiler));
+if (process.env.NODE_ENV === 'development') {
+  const compiler = webpack(webpackConfig);
+  app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: webpackConfig.output.publicPath }));
+  app.use(webpackHotMiddleware(compiler));
 }
 
 // Swagger API documentation
 app.get('/swagger.json', (req, res) => {
-   res.json(swagger);
+  res.json(swagger);
 });
+
+app.post('/uploadnewproposalattatchfile', uploadnewproposal);
+app.post('/uploadproposalattatchfile/:proposal_id', uploadeditproposal);
+app.post('/uploadnewleaseattatchfile', uploadnewleaseattatchfile);
+app.post('/uploadleaseattatchfile/:lease_id', uploadleaseattatchfile);
 
 // Router
 app.use('/api', routes);
@@ -39,7 +45,7 @@ app.use(errorHandler.notFoundErrorHandler);
 app.use(errorHandler.errorHandler);
 
 app.listen(app.get('port'), app.get('host'), () => {
-    console.log(`Server running at http://${app.get('host')}:${app.get('port')}`);
+  console.log(`Server running at http://${app.get('host')}:${app.get('port')}`);
 });
 
 export default app;

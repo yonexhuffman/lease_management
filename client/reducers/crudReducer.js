@@ -9,10 +9,24 @@ import {
 
 
 let initialState = {
-    products: [],
     selectedItem: {
         product: {},
-    }
+    },
+    /****** CLIENT ******/
+    clientlist: [],
+    clientview: null,
+    /****** UNIT ******/
+    unitlist: [],
+    unititem: null,
+    /****** ADMIN ******/
+    userlist: [],
+    useritem: null,
+    /****** PROPOSAL ******/
+    selectable_client_list: [],
+    selectable_unit_list: [],
+    selectable_user_list: [],
+    /****** LEASE ******/
+    selectable_proposal_list: [],
 };
 
 /**
@@ -20,8 +34,9 @@ let initialState = {
  */
 export default function (state, action) {
     state = state || initialState;
-    let newState;
+    let newState = initialState;
 
+    // return;
     switch (action.type) {
         case ENTITY_CREATE:
             newState[action.entity] = Object.assign({}, state, action.data);
@@ -32,7 +47,8 @@ export default function (state, action) {
             return newState;
 
         case ENTITY_FETCH:
-            newState[action.entity] = Object.assign({}, state, action.data);
+            // newState[action.entity] = Object.assign({}, state, action.data);
+            newState[action.entity] = action.data;
             return newState;
 
         case ENTITY_DELETE:
@@ -41,7 +57,9 @@ export default function (state, action) {
             return newState;
 
         case SELECT_ENTITY_ITEM:
-            newState.selectedItem[action.entity] = Object.assign({}, state, action.data);
+            // newState.selectedItem[action.entity] = Object.assign({}, state, action.data);
+            // newState[action.entity] = Object.assign({}, state, action.data);
+            newState[action.entity] = action.data;
             return newState;
 
         case CLEAR_ENTITY_LIST:

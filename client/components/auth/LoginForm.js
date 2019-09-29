@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
-import {Field, reduxForm} from 'redux-form';
+import { Field, reduxForm } from 'redux-form';
 
-// import {Card, CardHeader, CardContent} from '@material-ui/core';
-// import Button from '@material-ui/core/Button';
-// import { Row } from "reactstrap";
 import { NavLink } from 'react-router-dom';
-import { Row, Card, CardTitle, Form, Label, Input, Button } from 'reactstrap';
+import { Row, Card, Form, Label, Button } from 'reactstrap';
 import { Colxx } from '../../components/common/CustomBootstrap';
 import IntlMessages from '../../helpers/IntlMessages';
 // Import custom components
@@ -28,65 +24,65 @@ class LoginForm extends Component {
 
     render() {
         const props = this.props;
-        const {handleSubmit, onSubmit, classes, errorMessage} = props;
-    
+        const { handleSubmit, onSubmit, errorMessage } = props;
+
         return (
             <Row className="h-100">
                 <Colxx xxs="12" md="10" className="mx-auto my-auto">
                     <Card className="auth-card">
-                    <div className="position-relative image-side ">
-                        <p className="text-white h2">MAGIC IS IN THE DETAILS</p>
-                        <p className="white mb-0">
-                        Please use your credentials to login.
+                        <div className="position-relative image-side ">
+                            <p className="text-white h2">MAGIC IS IN THE DETAILS</p>
+                            <p className="white mb-0">
+                                Please use your credentials to login.
                         <br />
-                        If you are not a member, please{' '}
-                        <NavLink to={`/user/signup`} className="white">
-                            register
+                                If you are not a member, please{' '}
+                                <NavLink to={`/user/signup`} className="white">
+                                    register
                         </NavLink>
-                        .
+                                .
                         </p>
-                    </div>
-                    <div className="form-side">
-                        <NavLink to={`/`} className="white">
-                            <span className="logo-single" />
-                        </NavLink>
-                        {errorMessage  &&
-                        <CustomizedSnackbar
-                            variant="error"
-                            message={ errorMessage }
-                        />}
-                        <Form onSubmit={handleSubmit(onSubmit)}>
-                            <Label className="form-group has-float-label mb-4">
-                                <Field
-                                    type="text"
-                                    name="email"
-                                    component={renderText}
-                                    label="Username"
-                                />
-                            </Label>
-                            <Label className="form-group has-float-label mb-4">
-                                <Field
-                                    type="password"
-                                    name="password"
-                                    component={renderText}
-                                    label="Password"
-                                />
-                            </Label>
-                            <div className="d-flex justify-content-between align-items-center">
-                                <NavLink to={`/forgot-password`}>
-                                    <IntlMessages id="user.forgot-password-question" />
-                                </NavLink>
-                                <Button
-                                color="primary"
-                                className="btn-shadow"
-                                size="lg"
-                                type="submit"
-                                >
-                                    <IntlMessages id="user.login-button" />
-                                </Button>
-                            </div>
-                        </Form>
-                    </div>
+                        </div>
+                        <div className="form-side">
+                            <NavLink to={`/`} className="white">
+                                <span className="logo-single" />
+                            </NavLink>
+                            {errorMessage &&
+                                <CustomizedSnackbar
+                                    variant="error"
+                                    message={errorMessage}
+                                />}
+                            <Form onSubmit={handleSubmit(onSubmit)}>
+                                <Label className="form-group has-float-label mb-4">
+                                    <Field
+                                        type="text"
+                                        name="email"
+                                        component={renderText}
+                                        label="Username"
+                                    />
+                                </Label>
+                                <Label className="form-group has-float-label mb-4">
+                                    <Field
+                                        type="password"
+                                        name="password"
+                                        component={renderText}
+                                        label="Password"
+                                    />
+                                </Label>
+                                <div className="d-flex justify-content-between align-items-center">
+                                    <NavLink to={`/forgot-password`}>
+                                        <IntlMessages id="user.forgot-password-question" />
+                                    </NavLink>
+                                    <Button
+                                        color="primary"
+                                        className="btn-shadow"
+                                        size="lg"
+                                        type="submit"
+                                    >
+                                        <IntlMessages id="user.login-button" />
+                                    </Button>
+                                </div>
+                            </Form>
+                        </div>
                     </Card>
                 </Colxx>
             </Row>
@@ -104,6 +100,12 @@ const validateLogin = values => {
     requiredFields.forEach(field => {
         if (!values[field]) {
             errors[field] = '(The ' + field + ' field is required.)';
+        }
+        else if (field == 'password') {
+            const password = values[field];
+            if (password.length < 8) {
+                errors[field] = '(Password must be more than 8 chars.)';
+            }
         }
     });
 

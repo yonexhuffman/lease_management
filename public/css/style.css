@@ -24,3 +24,16 @@ a:hover {
 .m-b-15 {
     margin-bottom: 15px
 }
+
+.dropdown-menu.show {
+    z-index: 10000;
+}
+
+.background-leaselist-header {
+    background: #d1d1d1;
+    font-weight: 800;
+}
+
+.action_col {
+    width: 5%;
+}

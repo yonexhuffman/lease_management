@@ -1,13 +1,13 @@
 // Import custom utils
-import {fetch, store, update, destroy} from '../utils/httpUtil';
-import {getPathParam} from '../utils/serializeUtil';
+import { fetch, fetchByID, store, update, destroy, destroyItem } from '../utils/httpUtil';
+import { getPathParam } from '../utils/serializeUtil';
 
-export const fetchEntity = (entityName) => {
-    return fetch(entityName.toLowerCase());
+export const fetchEntity = (entityName, criteria) => {
+    return fetch(entityName.toLowerCase(), criteria);
 };
 
 export const fetchEntityById = (entityName, dataId) => {
-    return fetch(getPathParam(entityName.toLowerCase(), dataId));
+    return fetchByID(entityName.toLowerCase(), dataId);
 };
 
 export const storeEntity = (entityName, data) => {
@@ -20,4 +20,8 @@ export const updateEntity = (entityName, data, dataId) => {
 
 export const destroyEntity = (entityName, dataId) => {
     return destroy(getPathParam(entityName.toLowerCase(), dataId));
+};
+
+export const deleteEntity = (api_url, dataId) => {
+    return destroyItem(getPathParam(api_url.toLowerCase(), dataId));
 };

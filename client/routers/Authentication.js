@@ -1,19 +1,19 @@
 import React from 'react';
-import {Route, Redirect} from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
-import {isAuthenticated} from '../utils/jwtUtil';
+import { isAuthenticated } from '../utils/jwtUtil';
 
-const Authentication = ({component: Component, ...rest}) => (
+const Authentication = ({ component: Component, ...rest }) => (
     <Route {...rest} render={props => (
         isAuthenticated() ? (
-            <Component {...props}/>
+            <Component {...props} />
         ) : (
-            <Redirect to={{
-                pathname: '/',
-                state: {from: props.location}
-            }}/>
-        )
-    )}/>
+                <Redirect to={{
+                    pathname: "/user/login",
+                    state: { from: props.location }
+                }} />
+            )
+    )} />
 );
 
 export default Authentication;

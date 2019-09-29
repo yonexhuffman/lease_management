@@ -145,7 +145,7 @@ body {
 }
 
 .fixed-background {
-  background: url("/assets/img/balloon.jpg") no-repeat center center fixed;
+  background: url("/assets/img/KAFD_BG.jpg") no-repeat center center fixed;
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -306,10 +306,12 @@ hr {
 }
 
 .logo-single {
-  width: 110px;
-  height: 35px;
-  background: url($logoPath) no-repeat;
-  background-position: center center;
+  width: 220px;
+  height: 135px;
+  background-image: url(/assets/img/kafd_logo.png);
+  background-position: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
   display: inline-block;
   margin-bottom: 60px;
 }
@@ -683,7 +685,8 @@ button {
 
   &:hover,
   &:focus {
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15), 0 4px 6px 2px rgba(0, 0, 0, 0.15) !important;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15),
+      0 4px 6px 2px rgba(0, 0, 0, 0.15) !important;
   }
 }
 
@@ -786,31 +789,55 @@ button {
 }
 
 .btn-primary.btn-primary-gradient {
-  background: linear-gradient(to right, $theme-color-1, darken($theme-color-1, 15%));
+  background: linear-gradient(
+    to right,
+    $theme-color-1,
+    darken($theme-color-1, 15%)
+  );
 
   &:hover {
-    background: linear-gradient(to right, $theme-color-1, darken($theme-color-1, 8%));
+    background: linear-gradient(
+      to right,
+      $theme-color-1,
+      darken($theme-color-1, 8%)
+    );
   }
 }
 
 .btn-primary-gradient:not(:disabled):not(.disabled):active,
 .btn-primary-gradient:not(:disabled):not(.disabled).active,
 .show > .btn-primary-gradient.dropdown-toggle {
-  background: linear-gradient(to right, $theme-color-1, darken($theme-color-1, 15%));
+  background: linear-gradient(
+    to right,
+    $theme-color-1,
+    darken($theme-color-1, 15%)
+  );
 }
 
 .btn-secondary-gradient {
-  background: linear-gradient(to right, $theme-color-2, darken($theme-color-2, 15%));
+  background: linear-gradient(
+    to right,
+    $theme-color-2,
+    darken($theme-color-2, 15%)
+  );
 
   &:hover {
-    background: linear-gradient(to right, $theme-color-2, darken($theme-color-2, 8%));
+    background: linear-gradient(
+      to right,
+      $theme-color-2,
+      darken($theme-color-2, 8%)
+    );
   }
 }
 
 .btn-secondary-gradient:not(:disabled):not(.disabled):active,
 .btn-secondary-gradient:not(:disabled):not(.disabled).active,
 .show > .btn-secondary-gradient.dropdown-toggle {
-  background: linear-gradient(to right, $theme-color-2, darken($theme-color-2, 15%));
+  background: linear-gradient(
+    to right,
+    $theme-color-2,
+    darken($theme-color-2, 15%)
+  );
 }
 
 .btn-warning {
@@ -1567,7 +1594,7 @@ button {
 }
 
 /* 08.Carousel */
-.glide__slides{
+.glide__slides {
   & > * {
     white-space: initial;
   }
@@ -1576,7 +1603,7 @@ button {
 .glide-item {
   padding-left: 1rem;
   padding-right: 1rem;
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
 }
 
 .slider-nav {
@@ -1760,8 +1787,8 @@ button {
   }
 
   .navbar-logo {
-    width: 110px;
-    height: 35px;
+    width: 220px;
+    height: 70px;
     position: absolute;
     left: 0;
     right: 0;
@@ -1770,8 +1797,9 @@ button {
     .logo {
       width: 100%;
       height: 100%;
-      background: url($logoPath) no-repeat;
-      background-position: center center;
+      background-image: url($logoPath);
+      background-size: contain;
+      background-repeat: no-repeat;
     }
 
     .logo-mobile {
@@ -2927,7 +2955,12 @@ main {
 }
 
 .dashboard-sq-banner {
-  background-image: linear-gradient(to right top, $gradient-color-2, $gradient-color-3, $gradient-color-1);
+  background-image: linear-gradient(
+    to right top,
+    $gradient-color-2,
+    $gradient-color-3,
+    $gradient-color-1
+  );
   background-size: cover;
   height: 385px;
   transition: 0.5s;
@@ -3855,7 +3888,9 @@ select.form-control:not([size]):not([multiple]) {
   background: initial;
 }
 
-.custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::before {
+.custom-checkbox
+  .custom-control-input:indeterminate
+  ~ .custom-control-label::before {
   background-color: $theme-color-1;
 }
 
@@ -3985,9 +4020,13 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .react-select .react-select__dropdown-indicator,
-.react-select .react-select__control--is-focused .react-select__dropdown-indicator,
+.react-select
+  .react-select__control--is-focused
+  .react-select__dropdown-indicator,
 .react-select .react-select__clear-indicator,
-.react-select .react-select__control--is-focused .react-select__clear-indicator {
+.react-select
+  .react-select__control--is-focused
+  .react-select__clear-indicator {
   outline: initial;
   box-shadow: initial;
 
@@ -4144,7 +4183,8 @@ select.form-control:not([size]):not([multiple]) {
   border-bottom-color: $foreground-color !important;
 }
 
-.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle::before {
+.react-datepicker-popper[data-placement^="bottom"]
+  .react-datepicker__triangle::before {
   border-bottom-color: $separator-color !important;
 }
 
@@ -4186,7 +4226,8 @@ select.form-control:not([size]):not([multiple]) {
   border-top-color: $foreground-color !important;
 }
 
-.react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle::before,
+.react-datepicker-popper[data-placement^="top"]
+  .react-datepicker__triangle::before,
 .react-datepicker__year-read-view--down-arrow::before,
 .react-datepicker__month-read-view--down-arrow::before,
 .react-datepicker__month-year-read-view--down-arrow::before {
@@ -4247,11 +4288,16 @@ select.form-control:not([size]):not([multiple]) {
   }
 }
 
-.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box {
+.react-datepicker__time-container
+  .react-datepicker__time
+  .react-datepicker__time-box {
   width: 85px !important;
 }
 
-.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list {
+.react-datepicker__time-container
+  .react-datepicker__time
+  .react-datepicker__time-box
+  ul.react-datepicker__time-list {
   padding-left: 0 !important;
   padding-right: 30px !important;
 }
@@ -4358,7 +4404,9 @@ select.form-control:not([size]):not([multiple]) {
           $theme-color-1
         )+";' d='M4.1,23.9A13.51,13.51,0,0,1,0,14,13.52,13.52,0,0,1,4.1,4.1,13.52,13.52,0,0,1,14,0a13.52,13.52,0,0,1,9.9,4.1A13.52,13.52,0,0,1,28,14a13.51,13.51,0,0,1-4.1,9.9A13.52,13.52,0,0,1,14,28,13.52,13.52,0,0,1,4.1,23.9Z'/%3E%3Cpath style='fill:"+encodecolor(
           $foreground-color
-        )+";' d='M13.13,19.35V6.17a.88.88,0,1,1,1.75,0V19.35Z'/%3E%3Crect style='fill:"+encodecolor($foreground-color)+";' x='13.13' y='21.07' width='1.75' height='1.64'/%3E%3C/svg%3E");
+        )+";' d='M13.13,19.35V6.17a.88.88,0,1,1,1.75,0V19.35Z'/%3E%3Crect style='fill:"+encodecolor(
+          $foreground-color
+        )+";' x='13.13' y='21.07' width='1.75' height='1.64'/%3E%3C/svg%3E");
       width: 28px;
       height: 28px;
     }
@@ -4588,39 +4636,55 @@ select.form-control:not([size]):not([multiple]) {
   background: $separator-color !important;
 }
 
-.custom-switch.custom-switch-primary .custom-switch-input:checked + .custom-switch-btn {
+.custom-switch.custom-switch-primary
+  .custom-switch-input:checked
+  + .custom-switch-btn {
   background: $theme-color-1 !important;
   border: 1px solid $theme-color-1 !important;
 }
 
-.custom-switch.custom-switch-secondary .custom-switch-input:checked + .custom-switch-btn {
+.custom-switch.custom-switch-secondary
+  .custom-switch-input:checked
+  + .custom-switch-btn {
   background: $theme-color-2 !important;
   border: 1px solid $theme-color-2 !important;
 }
 
-.custom-switch.custom-switch-primary-inverse .custom-switch-input + .custom-switch-btn {
+.custom-switch.custom-switch-primary-inverse
+  .custom-switch-input
+  + .custom-switch-btn {
   border: 1px solid $separator-color !important;
 }
 
-.custom-switch.custom-switch-primary-inverse .custom-switch-input:checked + .custom-switch-btn {
+.custom-switch.custom-switch-primary-inverse
+  .custom-switch-input:checked
+  + .custom-switch-btn {
   background: $input-background !important;
   border: 1px solid $theme-color-1 !important;
 }
 
-.custom-switch.custom-switch-primary-inverse .custom-switch-input:checked + .custom-switch-btn:after {
+.custom-switch.custom-switch-primary-inverse
+  .custom-switch-input:checked
+  + .custom-switch-btn:after {
   background: $theme-color-1 !important;
 }
 
-.custom-switch.custom-switch-secondary-inverse .custom-switch-input + .custom-switch-btn {
+.custom-switch.custom-switch-secondary-inverse
+  .custom-switch-input
+  + .custom-switch-btn {
   border: 1px solid $separator-color !important;
 }
 
-.custom-switch.custom-switch-secondary-inverse .custom-switch-input:checked + .custom-switch-btn {
+.custom-switch.custom-switch-secondary-inverse
+  .custom-switch-input:checked
+  + .custom-switch-btn {
   background: $input-background !important;
   border: 1px solid $theme-color-2 !important;
 }
 
-.custom-switch.custom-switch-secondary-inverse .custom-switch-input:checked + .custom-switch-btn:after {
+.custom-switch.custom-switch-secondary-inverse
+  .custom-switch-input:checked
+  + .custom-switch-btn:after {
   background: $theme-color-2 !important;
 }
 
@@ -4632,7 +4696,7 @@ select.form-control:not([size]):not([multiple]) {
   border-color: $separator-color !important;
 }
 
-.rc-switch.custom-switch.custom-switch-small  {
+.rc-switch.custom-switch.custom-switch-small {
   width: 42px !important;
   height: 23px !important;
 }
@@ -4644,7 +4708,7 @@ select.form-control:not([size]):not([multiple]) {
   top: 3px !important;
 }
 
-.rc-switch-checked.custom-switch.custom-switch-small:after{
+.rc-switch-checked.custom-switch.custom-switch-small:after {
   left: 18px !important;
 }
 
@@ -5411,7 +5475,12 @@ input:-webkit-autofill {
 
 .progress-banner {
   height: 200px;
-  background-image: linear-gradient(to right top, $gradient-color-2, $gradient-color-3, $gradient-color-1);
+  background-image: linear-gradient(
+    to right top,
+    $gradient-color-2,
+    $gradient-color-3,
+    $gradient-color-1
+  );
   transition: 0.5s;
   background-size: 200% auto;
   cursor: pointer;
@@ -5683,7 +5752,7 @@ input:-webkit-autofill {
 
   .image-side {
     width: 40%;
-    background: url("/assets/img/login-balloon.jpg") no-repeat center top;
+    background: url("/assets/img/KAFD_login.jpg") no-repeat center top;
     background-size: cover;
     padding: 80px 40px;
 
@@ -6106,7 +6175,8 @@ input:-webkit-autofill {
   opacity: 1;
 }
 
-.has-float-label .form-control:placeholder-shown:not(:focus)::-webkit-input-placeholder {
+.has-float-label
+  .form-control:placeholder-shown:not(:focus)::-webkit-input-placeholder {
   opacity: 0;
 }
 
@@ -6114,7 +6184,8 @@ input:-webkit-autofill {
   opacity: 0;
 }
 
-.has-float-label .form-control:placeholder-shown:not(:focus):-ms-input-placeholder {
+.has-float-label
+  .form-control:placeholder-shown:not(:focus):-ms-input-placeholder {
   opacity: 0;
 }
 
@@ -6226,7 +6297,8 @@ input:-webkit-autofill {
   opacity: 1;
 }
 
-.has-top-label .form-control:placeholder-shown:not(:focus)::-webkit-input-placeholder {
+.has-top-label
+  .form-control:placeholder-shown:not(:focus)::-webkit-input-placeholder {
   opacity: 0;
 }
 
@@ -6234,7 +6306,8 @@ input:-webkit-autofill {
   opacity: 0;
 }
 
-.has-top-label .form-control:placeholder-shown:not(:focus):-ms-input-placeholder {
+.has-top-label
+  .form-control:placeholder-shown:not(:focus):-ms-input-placeholder {
   opacity: 0;
 }
 
@@ -6363,7 +6436,7 @@ input:-webkit-autofill {
   padding: 0.5rem 1.5rem;
   background: $input-background;
   color: $primary-color;
-  
+
   cursor: pointer;
 
   span {
@@ -6677,8 +6750,12 @@ input:-webkit-autofill {
     margin-right: 2px;
   }
 
-  .input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
-  .input-group > .input-group-append:last-child > .input-group-text:not(:last-child),
+  .input-group
+    > .input-group-append:last-child
+    > .btn:not(:last-child):not(.dropdown-toggle),
+  .input-group
+    > .input-group-append:last-child
+    > .input-group-text:not(:last-child),
   .input-group > .input-group-append:not(:last-child) > .btn,
   .input-group > .input-group-append:not(:last-child) > .input-group-text,
   .input-group > .input-group-prepend > .btn,
@@ -6710,7 +6787,9 @@ input:-webkit-autofill {
   .input-group > .input-group-append > .btn,
   .input-group > .input-group-append > .input-group-text,
   .input-group > .input-group-prepend:first-child > .btn:not(:first-child),
-  .input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child),
+  .input-group
+    > .input-group-prepend:first-child
+    > .input-group-text:not(:first-child),
   .input-group > .input-group-prepend:not(:first-child) > .btn,
   .input-group > .input-group-prepend:not(:first-child) > .input-group-text {
     border-radius: $border-radius;
@@ -6725,8 +6804,12 @@ input:-webkit-autofill {
     margin-left: -1px;
   }
 
-  .input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
-  .input-group > .input-group-append:last-child > .input-group-text:not(:last-child),
+  .input-group
+    > .input-group-append:last-child
+    > .btn:not(:last-child):not(.dropdown-toggle),
+  .input-group
+    > .input-group-append:last-child
+    > .input-group-text:not(:last-child),
   .input-group > .input-group-append:not(:last-child) > .btn,
   .input-group > .input-group-append:not(:last-child) > .input-group-text,
   .input-group > .input-group-prepend > .btn,
@@ -6737,14 +6820,20 @@ input:-webkit-autofill {
   .input-group > .input-group-append > .btn,
   .input-group > .input-group-append > .input-group-text,
   .input-group > .input-group-prepend:first-child > .btn:not(:first-child),
-  .input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child),
+  .input-group
+    > .input-group-prepend:first-child
+    > .input-group-text:not(:first-child),
   .input-group > .input-group-prepend:not(:first-child) > .btn,
   .input-group > .input-group-prepend:not(:first-child) > .input-group-text {
     border-radius: 50px;
   }
 
-  .input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
-  .input-group > .input-group-append:last-child > .input-group-text:not(:last-child),
+  .input-group
+    > .input-group-append:last-child
+    > .btn:not(:last-child):not(.dropdown-toggle),
+  .input-group
+    > .input-group-append:last-child
+    > .input-group-text:not(:last-child),
   .input-group > .input-group-append:not(:last-child) > .btn,
   .input-group > .input-group-append:not(:last-child) > .input-group-text,
   .input-group > .input-group-prepend > .btn,
@@ -6762,7 +6851,9 @@ input:-webkit-autofill {
     border-bottom-right-radius: 0;
   }
 
-  .input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle) {
+  .input-group
+    > .input-group-append:last-child
+    > .btn:not(:last-child):not(.dropdown-toggle) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
@@ -6863,13 +6954,12 @@ input:-webkit-autofill {
     }
   }
 
-  
-.react-contextmenu-item {
-  span {
-    margin-left: initial;
-    margin-right: 0.5rem;
+  .react-contextmenu-item {
+    span {
+      margin-left: initial;
+      margin-right: 0.5rem;
+    }
   }
-}
 
   .nav,
   .pagination {
@@ -7274,7 +7364,10 @@ input:-webkit-autofill {
     }
   }
 
-  .react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list {
+  .react-datepicker__time-container
+    .react-datepicker__time
+    .react-datepicker__time-box
+    ul.react-datepicker__time-list {
     padding-left: 30px !important;
     padding-right: 0 !important;
   }

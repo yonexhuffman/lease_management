@@ -76,9 +76,12 @@ const router = express.Router();
  *            $ref: '#/definitions/Error'
  */
 
-router.route('/login')
-    .post((req, res) => {
-        authCtrl.login(req, res);
-    });
+router.route('/login').post((req, res) => {
+    authCtrl.login(req, res);
+});
+
+router.route('/resetpassword/:id').put((req, res) => {
+    authCtrl.resetpassword(req, res);
+});
 
 export default router;
