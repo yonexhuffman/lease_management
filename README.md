@@ -31,3 +31,15 @@ List of NPM Commands:
 URL : http://localhost:3000/
 
 Navigate to http://localhost:3000/swagger for the API documentation.
+
+### 4. Warning
+```
+node-gyp error : https://stackoverflow.com/questions/51222536/error-while-installing-bycrpt-in-nodejs-whenever-i-run-npm-install-install-sa
+
+npm install --global --production windows-build-tools
+```
+
+```
+dynamic error : https://github.com/styleguidist/react-styleguidist/issues/987
+npm install @babel/plugin-syntax-dynamic-import
+```
